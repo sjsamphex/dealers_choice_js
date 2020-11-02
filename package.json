@@ -2,7 +2,7 @@
   "name": "dealers_choice_js",
   "version": "1.0.0",
   "description": "node.js and express practice with book list",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

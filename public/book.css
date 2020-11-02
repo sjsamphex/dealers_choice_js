@@ -1,0 +1,17 @@
+@import 'main.css';
+
+.book-item {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  background-color: snow;
+  width: 40vw;
+}
+.book-item img {
+  width: 100%;
+}
+.book-info {
+  margin: 1rem;
+  width: auto;
+}
