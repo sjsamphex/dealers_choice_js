@@ -37,7 +37,7 @@ const data = [
   },
   {
     id: 5,
-    rating: 166,
+    rating: 5,
     title: 'I Could Pee on This: And Other Poems by Cats',
     content:
       'Animal lovers will laugh out loud at the quirkiness of their feline friends with these insightful and curious poems from the singular minds of funny cats. In this hilarious book of tongue-in-cheek poetry, the author of the internationally syndicated comic strip Sally Forth helps cats unlock their creative potential and explain their odd behavior to ignorant humans. With titles like "Who Is That on Your Lap?," "This Is My Chair," "Kneel Before Me," "Nudge," and "Some of My Best Friends Are Dogs," the poems collected in I Could Pee on This perfectly capture the inner workings of the cat psyche. With photos of the cat authors throughout, this whimsical volume reveals kitties at their wackiest, and most exasperating (but always lovable). Ideal for that "crazy cat lady" or "cat mom/dad" in your life this collection of poems makes for the perfect cat themed gift for anyone who\'s obsessed with our feline friends.',
