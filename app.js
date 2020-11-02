@@ -5,6 +5,7 @@ const bookBank = require('./bookBank.js');
 
 express.static('./');
 app.use(express.static('public'));
+app.use(express.static('public/images'));
 
 app.use(morgan('dev'));
 app.get('/', (req, res, next) => {
