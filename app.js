@@ -15,9 +15,10 @@ app.get('/', (req, res, next) => {
   <head>
     <title>Cat Books</title>
     <link rel="stylesheet" href="/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="news-list">
+    <div class="book-list">
       <header><img src="/CatBookLogo.png"/> <a href="/">Cat Books </a><img src="/CatBookLogo.png"/></header>
       ${books
         .map(
@@ -32,7 +33,7 @@ app.get('/', (req, res, next) => {
               <br>
               <small>(by ${book.author})</small>
             </p>
-            <small class="news-info">
+            <small>
               Rating: ${book.rating} ⭑
             </small>
           </div>
@@ -57,9 +58,10 @@ app.get('/books/:id', (req, res, next) => {
   <head>
     <title>Cat Books</title>
     <link rel="stylesheet" href="/book.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="news-list">
+    <div class="book-list">
       <header><img src="/CatBookLogo.png"/> <a href="/">Cat Books </a><img src="/CatBookLogo.png"/></header>
        <div class='book-item'>
           <div class='book-image'>
@@ -71,7 +73,7 @@ app.get('/books/:id', (req, res, next) => {
               <br>
               <small>(by ${book.author})</small>
             </p>
-            <small class="news-info">
+            <small>
               Rating: ${book.rating} ⭑
             </small>
             <p>${book.content}</p>

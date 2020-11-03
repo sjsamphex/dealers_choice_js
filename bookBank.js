@@ -19,7 +19,7 @@ const data = [
   },
   {
     id: 3,
-    rating: 198,
+    rating: 4,
     title: 'Total Cat Mojo: The Ultimate Guide to Life with Your Cat',
     content:
       "Cat Mojo is the confidence that cats exhibit when they are at ease in their environment and in touch with their natural instincts—to hunt, catch, kill, eat, groom, and sleep. Problems such as litter box avoidance and aggression arise when cats lack this confidence. Jackson Galaxy's number one piece of advice to his clients is to help their cats harness their mojo. \n This book is his most comprehensive guide yet to cat behavior and basic cat care, rooted in understanding cats better. From getting kittens off to the right start socially, to taking care of cats in their senior years, and everything in between, this book addresses the head-to-toe physical and emotional needs of cats—whether related to grooming, nutrition, play, or stress-free trips to the vet.",

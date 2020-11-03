@@ -6,12 +6,23 @@
   border: 1px solid gray;
   border-radius: 1rem;
   background-color: snow;
-  width: 40vw;
-}
-.book-item img {
-  width: 100%;
+  width: 70vw;
 }
 .book-info {
   margin: 1rem;
   width: auto;
+}
+.book-item img {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .book-item {
+    width: 98vw;
+    align-items: center;
+    flex-direction: column;
+  }
+  .book-info {
+    width: 98%;
+  }
 }
