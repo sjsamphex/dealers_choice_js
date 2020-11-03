@@ -1,6 +1,6 @@
 # dealers_choice_js
- Node.js/Express practice
 
+Node.js/Express practice
 
 ## Instructions:
 

@@ -1,5 +1,5 @@
 var html = require('html-template-tag');
-module.exports = (book) => {
+module.exports = () => {
   let htmlscript = html`<!DOCTYPE html>
     <html>
       <head>
