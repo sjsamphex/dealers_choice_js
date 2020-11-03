@@ -2,11 +2,10 @@
  Node.js/Express practice
 
 
-Instructions:
+## Instructions:
 
-`npm install`
+-`npm install`
 
+-`npm start`
 
-`npm start`
-
-Open localhost:300 in browser
+-Open localhost:300 in browser
