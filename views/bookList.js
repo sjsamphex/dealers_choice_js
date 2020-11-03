@@ -1,6 +1,6 @@
-var html = require('html-template-tag');
+const html = require('html-template-tag');
 module.exports = (books) => {
-  let htmlscript = html`<!DOCTYPE html>
+  const htmlscript = html`<!DOCTYPE html>
     <html>
       <head>
         <title>Cat Books</title>

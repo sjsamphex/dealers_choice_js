@@ -2,10 +2,11 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bookBank = require('./bookBank.js');
-var html = require('html-template-tag');
+// eslint-disable-next-line no-unused-vars
+const html = require('html-template-tag');
 const bookList = require('./views/bookList');
 const bookDetails = require('./views/bookDetails');
-const FourOhFour = require('./views/404');
+const fourOhFour = require('./views/404');
 
 express.static('./');
 app.use(express.static('public'));
@@ -28,7 +29,7 @@ app.get('/books/:id', (req, res, next) => {
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
-  res.status(404).send(FourOhFour());
+  res.status(404).send(fourOhFour());
 });
 
 const PORT = 3000;
