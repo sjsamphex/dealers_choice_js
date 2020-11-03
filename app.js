@@ -5,6 +5,7 @@ const bookBank = require('./bookBank.js');
 var html = require('html-template-tag');
 const bookList = require('./views/bookList');
 const bookDetails = require('./views/bookDetails');
+const FourOhFour = require('./views/404');
 
 express.static('./');
 app.use(express.static('public'));
@@ -27,28 +28,7 @@ app.get('/books/:id', (req, res, next) => {
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
-  let htmlscript = html`<!DOCTYPE html>
-    <html>
-      <head>
-        <title>Cat Books</title>
-        <link rel="stylesheet" href="/book.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
-      <body>
-        <div class="book-list">
-          <header>
-            <img src="/CatBookLogo.png" /> <a href="/">Cat Books </a
-            ><img src="/CatBookLogo.png" />
-          </header>
-          <br />
-          <img src="/sadcat.jpg" style="width:auto;height:auto;" />
-          <p style="text-align:center">
-            This page doesn't exist. Please go back :(
-          </p>
-        </div>
-      </body>
-    </html>`;
-  res.status(404).send(htmlscript);
+  res.status(404).send(FourOhFour());
 });
 
 const PORT = 3000;
