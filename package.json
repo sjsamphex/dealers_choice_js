@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
+  "keywords": [
+    "heroku"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sjsamphex/dealers_choice_js.git"
@@ -25,5 +28,8 @@
     "eslint": "^7.12.1",
     "eslint-config-google": "^0.14.0",
     "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": "12.19.0"
   }
 }
