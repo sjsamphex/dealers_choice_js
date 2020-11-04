@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const bookBank = require('./bookBank.js');
 // eslint-disable-next-line no-unused-vars
 const html = require('html-template-tag');
@@ -12,7 +12,7 @@ express.static('./');
 app.use(express.static('public'));
 app.use(express.static('public/images'));
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.get('/', (req, res, next) => {
   const books = bookBank.list();
   res.send(bookList(books));
