@@ -7,7 +7,10 @@ img {
 }
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  /* align-content: center; */
 }
 header {
   display: flex;
@@ -18,6 +21,11 @@ header a {
   text-decoration: none;
   font-size: 2rem;
 }
+.book-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
 
 .book-item {
   margin: 1rem;
@@ -25,7 +33,7 @@ header a {
   border: 1px solid gray;
   border-radius: 1rem;
   background-color: snow;
-  width: 60vw;
+  width: 30vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
