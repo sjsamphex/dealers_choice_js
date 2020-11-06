@@ -14,7 +14,7 @@ express.static('./');
 app.use(express.static('public'));
 app.use(express.static('public/images'));
 
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 app.get('/', async (req, res, next) => {
   try {
     const data = await client.query(SQL`SELECT * FROM books`);
@@ -27,13 +27,27 @@ app.get('/', async (req, res, next) => {
   }
 });
 
-app.get('/books/:id', (req, res, next) => {
+app.get('/books/:id', async (req, res, next) => {
   const id = req.params.id;
-  const book = bookBank.find(id);
-  if (!book.id) {
-    next(new Error('Not Found'));
+  try {
+    // const data = await client.query(
+    //   SQL`SELECT * FROM books WHERE id=${req.params.id}`
+    // );
+    const data = await client.query(SQL`SELECT * FROM books WHERE id=$1`, [
+      req.params.id,
+    ]);
+    const [book] = data.rows;
+
+    // const books = bookBank.list();
+    res.send(bookDetails(book));
+  } catch (error) {
+    next(error);
   }
-  res.send(bookDetails(book));
+  // const book = bookBank.find(id);
+  // if (!book.id) {
+  //   next(new Error('Not Found'));
+  // }
+  // res.send(bookDetails(book));
 });
 
 app.use(function (err, req, res, next) {
