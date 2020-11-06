@@ -18,6 +18,7 @@ app.use(express.static('public/images'));
 //app.use(morgan('dev'));
 app.get('/', async (req, res, next) => {
   try {
+    const client = await pool.connect();
     const data = await client.query(SQL`SELECT * FROM books`);
     const books = data.rows;
 
@@ -31,6 +32,7 @@ app.get('/', async (req, res, next) => {
 app.get('/books/:id', async (req, res, next) => {
   let id = req.params.id;
   try {
+    const client = await pool.connect();
     const booklistquery = await client.query(SQL`SELECT count(*) FROM books`);
     const booklistlength = booklistquery.rows[0].count;
     console.log(booklistlength);
