@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const client = require('./db/index');
-const bookBank = require('./bookBank.js');
+// const bookBank = require('./bookBank.js');
 // eslint-disable-next-line no-unused-vars
 const html = require('html-template-tag');
 const bookList = require('./views/bookList');
