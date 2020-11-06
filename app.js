@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-//const morgan = require('morgan');
-//const client = require('./db/index');
+// const morgan = require('morgan');
+// const client = require('./db/index');
 const pool = require('./db/index');
 // const bookBank = require('./bookBank.js');
 // eslint-disable-next-line no-unused-vars
@@ -15,7 +15,7 @@ express.static('./');
 app.use(express.static('public'));
 app.use(express.static('public/images'));
 
-//app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.get('/', async (req, res, next) => {
   try {
     const client = await pool.connect();
