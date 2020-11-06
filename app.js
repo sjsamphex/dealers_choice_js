@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
-const client = require('./db/index');
+//const client = require('./db/index');
+const pool = require('./db/index');
 // const bookBank = require('./bookBank.js');
 // eslint-disable-next-line no-unused-vars
 const html = require('html-template-tag');
@@ -58,6 +59,19 @@ app.get('/books/:id', async (req, res, next) => {
 app.use(function (err, req, res, next) {
   console.error(err.stack);
   res.status(404).send(fourOhFour());
+});
+
+app.get('/db', async (req, res) => {
+  try {
+    const client = await pool.connect();
+    const result = await client.query('SELECT * FROM test_table');
+    const results = { results: result ? result.rows : null };
+    res.render('pages/db', results);
+    client.release();
+  } catch (err) {
+    console.error(err);
+    res.send('Error ' + err);
+  }
 });
 
 const PORT = process.env.PORT || 3000;
