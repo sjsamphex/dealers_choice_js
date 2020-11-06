@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 // const morgan = require('morgan');
-// const client = require('./db/index');
-const pool = require('./db/index');
+const client = require('./db/index');
 // const bookBank = require('./bookBank.js');
 // eslint-disable-next-line no-unused-vars
 const html = require('html-template-tag');
@@ -18,7 +17,6 @@ app.use(express.static('public/images'));
 // app.use(morgan('dev'));
 app.get('/', async (req, res, next) => {
   try {
-    const client = await pool.connect();
     const data = await client.query(SQL`SELECT * FROM books`);
     const books = data.rows;
 
@@ -32,7 +30,6 @@ app.get('/', async (req, res, next) => {
 app.get('/books/:id', async (req, res, next) => {
   let id = req.params.id;
   try {
-    const client = await pool.connect();
     const booklistquery = await client.query(SQL`SELECT count(*) FROM books`);
     const booklistlength = booklistquery.rows[0].count;
     console.log(booklistlength);
