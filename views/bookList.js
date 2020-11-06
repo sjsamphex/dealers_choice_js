@@ -14,21 +14,21 @@ module.exports = (books) => {
         </header>
         <div class="book-list">
           ${books.map(
-            (book) => html` <div class="book-item">
-              <div class="book-image">
-                <img src="/${book.image}" />
-              </div>
-              <div class="book-info">
-                <p>
-                  <span class="news-position"
-                    ><a href="/books/${book.id}">${book.title}</a>.
-                  </span>
-                  <br />
-                  <small>(by ${book.author})</small>
-                </p>
-                <small> Rating: ${book.rating} ⭑ </small>
-              </div>
-            </div>`
+            (book) => html` <a href="/books/${book.id}">
+              <div class="book-item">
+                <div class="book-image">
+                  <img src="/${book.image}" />
+                </div>
+                <div class="book-info">
+                  <p>
+                    <span class="news-position">${book.title}. </span>
+                    <br />
+                    <small>(by ${book.author})</small>
+                  </p>
+                  <small> Rating: ${book.rating} ⭑ </small>
+                </div>
+              </div></a
+            >`
           )}
         </div>
       </body>

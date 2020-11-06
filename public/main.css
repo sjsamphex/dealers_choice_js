@@ -17,8 +17,10 @@ header {
   justify-content: space-evenly;
   align-items: center;
 }
-header a {
+a {
   text-decoration: none;
+}
+header a {
   font-size: 2rem;
 }
 .book-list {

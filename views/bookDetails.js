@@ -26,6 +26,7 @@ module.exports = (book) => {
             <p>${book.content}</p>
           </div>
         </div>
+        <a href="/books/${book.id + 1}">Next Book</a>
       </body>
     </html>`;
   return htmlscript;

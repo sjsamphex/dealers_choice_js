@@ -28,14 +28,19 @@ app.get('/', async (req, res, next) => {
 });
 
 app.get('/books/:id', async (req, res, next) => {
-  const id = req.params.id;
+  let id = req.params.id;
   try {
+    const booklistquery = await client.query(SQL`SELECT count(*) FROM books`);
+    const booklistlength = booklistquery.rows[0].count;
+    console.log(booklistlength);
+    if (id > booklistlength) {
+      id = id % booklistlength;
+    }
+
     // const data = await client.query(
     //   SQL`SELECT * FROM books WHERE id=${req.params.id}`
     // );
-    const data = await client.query(SQL`SELECT * FROM books WHERE id=$1`, [
-      req.params.id,
-    ]);
+    const data = await client.query(SQL`SELECT * FROM books WHERE id=$1`, [id]);
     const [book] = data.rows;
 
     // const books = bookBank.list();
